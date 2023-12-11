@@ -20,10 +20,10 @@ class RegistrationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-        ->add('email',EmailType::class,['attr'=>['class'=>'form-control','placeholder'=>'veillez indiquez votre mail']])
-        ->add('username',TextType::class,['attr'=>['class'=>'form-control','placeholder'=>'donnez votre PseudoName']])
-        ->add('first_name',TextType::class,['attr'=>['class'=>'form-control','placeholder'=>'Votre First name']])
-        ->add('last_name',TextType::class,['attr'=>['class'=>'form-control','placeholder'=>'Votre last name']])
+        ->add('email',EmailType::class,['attr'=>['class'=>'form-control','placeholder'=>'Votre email']])
+        ->add('username',TextType::class,['attr'=>['class'=>'form-control','placeholder'=>'votre identifiant']])
+        ->add('first_name',TextType::class,['attr'=>['class'=>'form-control','placeholder'=>'Votre prénom']])
+        ->add('last_name',TextType::class,['attr'=>['class'=>'form-control','placeholder'=>'Votre nom']])
         ->add('roles', ChoiceType::class, [
             'choices' => [
                 'Patient' => 'ROLE_PATIENT',
@@ -46,7 +46,7 @@ class RegistrationFormType extends AbstractType
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
                 'mapped' => false,
-                'attr' => ['autocomplete' => 'new-password','class'=>'form-control'],
+                'attr' => ['autocomplete' => 'new-password','class'=>'form-control','placeholder'=>'Votre mot de passe'],
                 'constraints' => [
                     new NotBlank([
                         'message' => 'Please enter a password',
